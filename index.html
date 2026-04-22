@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinWise | Control financiero inteligente</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVEGACIÓN CON EFECTO AL SCROLL -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i> FinWise
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO CON EFECTO DE ESCRITURA -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">✨ Sin comisiones ocultas</span>
+                <h1>Controla tu dinero <span class="typing" id="typing"></span></h1>
+                <p>La app que transforma tus finanzas personales. Ahorra, invierte y alcanza tus metas sin estrés.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn-primary">Comenzar gratis <i class="fas fa-arrow-right"></i></a>
+                    <a href="#demo" class="btn-secondary">Ver demo <i class="fas fa-play"></i></a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="50000">0</div>
+                    <div class="stat-label">Usuarios activos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="125">0</div>
+                    <div class="stat-label">Países</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="4.9">0</div>
+                    <div class="stat-label">Calificación ★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS CON ICONOS Y TOOLTIPS -->
+    <section id="beneficios" class="beneficios">
+        <div class="container">
+            <h2 class="section-title">¿Por qué <span class="highlight">FinWise</span>?</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-card" data-tooltip="Sincroniza todas tus cuentas en segundos">
+                    <div class="beneficio-icon"><i class="fas fa-university"></i></div>
+                    <h3>Bancos unificados</h3>
+                    <p>Conecta más de 2000 bancos automáticamente.</p>
+                </div>
+                <div class="beneficio-card" data-tooltip="Gráficos interactivos y predicciones">
+                    <div class="beneficio-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Análisis inteligente</h3>
+                    <p>IA que aprende de tus hábitos y te recomienda ahorros.</p>
+                </div>
+                <div class="beneficio-card" data-tooltip="Tus datos están encriptados">
+                    <div class="beneficio-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad bancaria</h3>
+                    <p>Encriptación de nivel militar. Tus datos, seguros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMO INTERACTIVA (el "wow" del proyecto) -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">Simula tu <span class="highlight">ahorro</span></h2>
+            <div class="demo-container">
+                <div class="demo-controls">
+                    <div class="input-group">
+                        <label><i class="fas fa-dollar-sign"></i> Ingreso mensual</label>
+                        <input type="range" id="ingreso" min="500" max="10000" step="100" value="2500">
+                        <span id="ingresoValue">$2,500</span>
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fas fa-coffee"></i> Porcentaje ahorro</label>
+                        <input type="range" id="ahorroPorcentaje" min="0" max="50" step="1" value="15">
+                        <span id="ahorroValue">15%</span>
+                    </div>
+                    <div class="resultado-card">
+                        <p>💰 Ahorro mensual:</p>
+                        <h3 id="ahorroMensual">$375</h3>
+                        <p>📈 Ahorro anual:</p>
+                        <h3 id="ahorroAnual">$4,500</h3>
+                    </div>
+                </div>
+                <div class="demo-grafico">
+                    <div class="grafico-barra">
+                        <div class="barra-label">Gastos</div>
+                        <div class="barra-container">
+                            <div class="barra barra-gastos" style="width: 0%"></div>
+                        </div>
+                        <div class="barra-label">Ahorro</div>
+                        <div class="barra-container">
+                            <div class="barra barra-ahorro" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO CON VALIDACIÓN EN VIVO -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2 class="section-title">¿Listo para <span class="highlight">empezar</span>?</h2>
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="nombre" placeholder="Tu nombre" required>
+                        <span class="error-message" id="errorNombre"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="tu@email.com" required>
+                        <span class="error-message" id="errorEmail"></span>
+                    </div>
+                    <div class="form-group">
+                        <select id="plan">
+                            <option value="">Selecciona un plan</option>
+                            <option value="gratis">Gratis - Básico</option>
+                            <option value="pro">Pro - $9.99/mes</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block">Solicitar acceso <i class="fas fa-check"></i></button>
+                    <p class="form-notice">Sin compromiso. Cancelas cuando quieras.</p>
+                </form>
+                <div id="formSuccess" class="form-success hidden">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>¡Gracias!</h3>
+                    <p>Te enviaremos acceso en las próximas 24h.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-chart-line"></i> FinWise
+                <p>© 2025 FinWise - Tu futuro financiero</p>
+            </div>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
